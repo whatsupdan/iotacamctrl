@@ -5,17 +5,17 @@ find_package(PythonInterp 3.7 REQUIRED)
 find_package(PythonLibs 3.7 REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 
-set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+set(SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/include)
 set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
 
-set(PYBIND11_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/pybind11)
+set(PYBIND11_DIR ${CMAKE_SOURCE_DIR}/external/pybind11)
 add_subdirectory(${PYBIND11_DIR})
 pybind11_add_module(iotacamctrl ${SOURCES} "${SOURCE_DIR}/iotacamctrl.cpp")
 
 ### Append project cmake script dir ###
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
   set(CMAKE_INSTALL_PREFIX "build")
@@ -57,7 +57,7 @@ target_include_directories(iotacamctrl
 )
 
 ### Configure external library directories ###
-set(ldir ${CMAKE_CURRENT_SOURCE_DIR}/external)
+set(ldir ${CMAKE_SOURCE_DIR}/external)
 set(cr_ldir ${ldir}/crsdk)
 
 ### Link CRSDK library
