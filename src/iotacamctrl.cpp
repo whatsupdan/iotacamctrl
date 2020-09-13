@@ -26,18 +26,18 @@ void SDKInit()
 	auto init_success = SDK::Init();
 	if (!init_success) {
 		SDK::Release();
-		// std::exit(EXIT_FAILURE);
-		// std::cout << "Failed to initialize Remote SDK. Terminating.";
-		throw std::exception("Failed to initialize Remote SDK. Terminating.");
+		 std::exit(EXIT_FAILURE);
+		 std::cout << "Failed to initialize Remote SDK. Terminating.";
+//		throw std::exception("Failed to initialize Remote SDK. Terminating.");
 	}
-	// std::cout << "Remote SDK successfully initialized.";
+	 std::cout << "Remote SDK successfully initialized.";
 }
 
 
 void SDKRelease()
 {
 	SDK::Release();
-	// std::cout << "SDK resources released.";
+	 std::cout << "SDK resources released.";
 }
 
 
