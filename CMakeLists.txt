@@ -95,8 +95,5 @@ add_custom_command(TARGET iotacamctrl PRE_BUILD
 
 ## Install application
 ## '.' means, install to the root directory of CMAKE_INSTALL_PREFIX
-install(TARGETS iotacamctrl
-    COMPONENT python
-     LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
-)
+install(TARGETS iotacamctrl LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}")
 install(DIRECTORY ${cr_ldir}/ DESTINATION "${PYTHON_LIBRARY_DIR}")
