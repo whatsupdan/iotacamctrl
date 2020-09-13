@@ -38,7 +38,7 @@ set_target_properties(
         INSTALL_RPATH "$ORIGIN"
 )
 
-set(SOURCE_DIR "src")
+set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 include_directories(${SOURCE_DIR})
 set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
 
