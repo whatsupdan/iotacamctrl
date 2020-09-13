@@ -45,10 +45,12 @@ class CMakeBuild(build_ext):
         if not extdir.endswith(os.path.sep):
             extdir += os.path.sep
 
+        print(f"extdir VAR IS ===> {extdir}")
+
         cfg = 'Debug' if self.debug else 'Release'
         cmake_args = [
-            '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={}'.format(extdir),
-            '-DPYTHON_EXECUTABLE=' + sys.executable
+            f'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}',
+            f'-DPYTHON_EXECUTABLE={sys.executable}'
         ]
 
         build_args = ['--config', cfg]
