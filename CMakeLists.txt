@@ -7,6 +7,7 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
 
 set(PYBIND11_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/pybind11)
