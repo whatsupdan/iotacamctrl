@@ -47,6 +47,8 @@ class CMakeBuild(build_ext):
             extdir += os.path.sep
 
         print(f"extdir VAR IS ===> {extdir}")
+        print(f"get_python_lib() VAR IS ===> {get_python_lib()}")
+
 
         cfg = 'Debug' if self.debug else 'Release'
         cmake_args = [
