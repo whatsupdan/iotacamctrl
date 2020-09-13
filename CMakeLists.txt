@@ -5,6 +5,10 @@ find_package(PythonInterp 3.7 REQUIRED)
 find_package(PythonLibs 3.7 REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 
+set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+include_directories(${SOURCE_DIR})
+set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
+
 set(PYBIND11_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/pybind11)
 add_subdirectory(${PYBIND11_DIR})
 pybind11_add_module(iotacamctrl ${SOURCES} "${SOURCE_DIR}/iotacamctrl.cpp")
@@ -38,9 +42,7 @@ set_target_properties(
         INSTALL_RPATH "$ORIGIN"
 )
 
-set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-include_directories(${SOURCE_DIR})
-set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
+
 
 ## Specify char is signed-char to fix mismatch with Raspbian
 target_compile_options(iotacamctrl
