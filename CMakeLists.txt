@@ -6,7 +6,7 @@ find_package(PythonLibs 3.7 REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-include_directories(${SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(SOURCES "${SOURCE_DIR}/iotacamctrl.cpp")
 
 set(PYBIND11_DIR ${CMAKE_CURRENT_SOURCE_DIR}/external/pybind11)
