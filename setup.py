@@ -5,6 +5,7 @@ import re
 import subprocess
 from distutils.version import LooseVersion
 from distutils.core import setup, Extension
+from distutils.sysconfig import get_python_lib
 from setuptools.command.build_ext import build_ext
 
 
@@ -49,7 +50,7 @@ class CMakeBuild(build_ext):
 
         cfg = 'Debug' if self.debug else 'Release'
         cmake_args = [
-            f'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}',
+            f'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={get_python_lib()}',
             f'-DPYTHON_EXECUTABLE={sys.executable}'
         ]
 
