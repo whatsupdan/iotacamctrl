@@ -5,4 +5,8 @@ pkg-resources==0.0.0
 pybind11==2.5.0
 pyparsing==2.4.7
 scikit-build==0.11.1
+<<<<<<< HEAD
 six==1.15.0
+=======
+six==1.15.0
+>>>>>>> d39449fe5f47b8b4f57ca5c21f069c5515293842
