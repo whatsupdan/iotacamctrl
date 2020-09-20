@@ -20,6 +20,8 @@ set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 add_subdirectory(${LIB_DIR}/pybind11)
 
+pybind11_add_module(iotacamctrl SHARED  ${cli_hdrs} ${cli_srcs} ${crsdk_hdrs} ${SOURCES})
+
 set_target_properties(
     iotacamctrl
     PROPERTIES
@@ -55,7 +57,7 @@ target_link_libraries(iotacamctrl
 )
 
 
-pybind11_add_module(iotacamctrl SHARED  ${cli_hdrs} ${cli_srcs} ${crsdk_hdrs} ${SOURCES})
+
 
 
 
