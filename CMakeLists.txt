@@ -20,6 +20,9 @@ set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 include_directories(${INCLUDE_DIR})
 
+# add_library(MyExternalLib SHARED IMPORTED)
+
+
 add_subdirectory(${LIB_DIR}/pybind11)
 
 pybind11_add_module(iotacamctrl SHARED  ${cli_hdrs} ${cli_srcs} ${crsdk_hdrs} ${SOURCES})
@@ -48,8 +51,8 @@ target_include_directories(iotacamctrl
 )
 
 ### Configure external library directories ###
-set(ldir ${CMAKE_CURRENT_SOURCE_DIR}/lib)
-set(cr_ldir ${ldir}/CSR)
+set(ldir ${CMAKE_SOURCE_DIR}/lib)
+set(cr_ldir ${ldir}/crsdk)
 
 ### Link CRSDK library
 find_library(camera_remote Cr_Core HINTS ${cr_ldir})
