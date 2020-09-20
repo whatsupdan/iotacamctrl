@@ -18,6 +18,8 @@ set(SOURCES ${SOURCE_DIR}/iotacamctrl.cpp)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
+include_directories(${INCLUDE_DIR})
+
 add_subdirectory(${LIB_DIR}/pybind11)
 
 pybind11_add_module(iotacamctrl SHARED  ${cli_hdrs} ${cli_srcs} ${crsdk_hdrs} ${SOURCES})
