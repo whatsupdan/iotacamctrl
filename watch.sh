@@ -3,10 +3,10 @@
 # get the current path
 CURPATH=$(pwd)
 #--exclude ".*(\.git|\.idea)"
-inotifywait -r -m --excludei ".*(\.git|\.idea|build)" "$CURPATH" |
+inotifywait -r -m --excludei ".*(\.git|\.idea|build)" "$(pwd)" |
    while read path _ file; do
        echo $path$file modified
-       make install
+       pip install -e .
    done
 
 
