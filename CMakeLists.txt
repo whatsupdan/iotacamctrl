@@ -18,7 +18,7 @@ set(SOURCES ${SOURCE_DIR}/iotacamctrl.cpp)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
-include_directories(${INCLUDE_DIR})
+# include_directories(${INCLUDE_DIR})
 
 # add_library(MyExternalLib SHARED IMPORTED)
 
@@ -50,8 +50,7 @@ target_include_directories(iotacamctrl
 )
 
 ### Configure external library directories ###
-set(ldir ${CMAKE_SOURCE_DIR}/lib)
-set(cr_ldir ${ldir}/crsdk)
+set(cr_ldir ${LIB_DIR}/crsdk)
 
 ### Link CRSDK library
 find_library(camera_remote Cr_Core HINTS ${cr_ldir})
