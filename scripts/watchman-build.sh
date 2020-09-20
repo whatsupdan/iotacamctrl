@@ -14,7 +14,7 @@ watchman_build() {
     run="make build"
     watchman-make \
         -p 'include/**/*.h' 'lib/*' 'cmake/*.cmake' 'src/*.cpp' 'src/*.h' 'src/**/*.cpp' 'src/**/*.h' \
-        --make="$run"
+        -t install
 }
 
 watchman_build

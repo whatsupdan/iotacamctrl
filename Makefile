@@ -3,7 +3,7 @@
 clean:
 	rm -rf build/* iotacamctrl.egg-info
 
-install: clean build
+install: clean build-python
 
-build:
+build-python:
 	pip install -e .
