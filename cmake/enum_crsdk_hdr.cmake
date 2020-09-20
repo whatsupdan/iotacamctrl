@@ -1,6 +1,6 @@
 ## Script for enumerating CameraRemote SDK public header files
 ## referenced by iotacamctrl
-set(__crsdk_hdr_dir ${CMAKE_CURRENT_SOURCE_DIR}/lib/CRSDK)
+set(__crsdk_hdr_dir ${CMAKE_CURRENT_SOURCE_DIR}/include/CRSDK)
 
 ### Enumerate CameraRemote SDK public header files ###
 message("[${PROJECT_NAME}] Indexing CameraRemote SDK public header files..")

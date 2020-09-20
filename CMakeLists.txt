@@ -47,7 +47,7 @@ target_include_directories(iotacamctrl
 
 ### Configure external library directories ###
 set(ldir ${CMAKE_CURRENT_SOURCE_DIR}/lib)
-set(cr_ldir ${ldir}/crsdk)
+set(cr_ldir ${ldir}/CSR)
 
 ### Link CRSDK library
 find_library(camera_remote Cr_Core HINTS ${cr_ldir})
