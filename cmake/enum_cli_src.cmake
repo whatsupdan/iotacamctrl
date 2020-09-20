@@ -8,7 +8,6 @@ set(__cli_srcs
     ${__cli_src_dir}/ConnectionInfo.cpp
     # ${__cli_src_dir}/LibManager.cpp
     ${__cli_src_dir}/PropertyValueTable.cpp
-    ${__cli_src_dir}/iotacamctrl.cpp
     ${__cli_src_dir}/Text.cpp
 )
 

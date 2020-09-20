@@ -1,10 +1,16 @@
 ﻿#include <cstdlib>
-#include <iostream>
-#include <string>
+#if defined(USE_EXPERIMENTAL_FS)
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
+#else
+#include <filesystem>
+namespace fs = std::filesystem;
+#endif
+#include <iomanip>
 #include <pybind11/pybind11.h>
 #include "CameraRemote_SDK.h"
 #include "CameraDevice.h"
-#include "ICrCameraObjectInfo.h"
+#include "Text.h"
 
 namespace SDK = SCRSDK;
 namespace py = pybind11;
@@ -22,22 +28,22 @@ std::tuple<int, int, int, int> GetSDKVersion()
 
 void SDKInit()
 {
-	// std::cout << "Initialize Remote SDK...\n";
+	// cli::tout << "Initialize Remote SDK...\n";
 	auto init_success = SDK::Init();
 	if (!init_success) {
 		SDK::Release();
 		 std::exit(EXIT_FAILURE);
-		 std::cout << "Failed to initialize Remote SDK. Terminating.";
+		 cli::tout << "Failed to initialize Remote SDK. Terminating.";
 //		throw std::exception("Failed to initialize Remote SDK. Terminating.");
 	}
-	 std::cout << "Remote SDK successfully initialized.";
+	 cli::tout << "Remote SDK successfully initialized.";
 }
 
 
 void SDKRelease()
 {
 	SDK::Release();
-	 std::cout << "SDK resources released.";
+	 cli::tout << "SDK resources released.";
 }
 
 
