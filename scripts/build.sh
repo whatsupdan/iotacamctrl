@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 
 build {
   if [ "$1" != "-g" ] && [ -z "$VIRTUAL_ENV" ]; then
