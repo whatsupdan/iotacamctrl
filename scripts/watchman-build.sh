@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-function watchman_build {
+watchman_build {
 
   if [[ -z $VIRTUAL_ENV ]]; then
     if [[ -d "venv" ]]; then
@@ -21,7 +21,7 @@ function watchman_build {
 
 
 
-
+watchman_build
 
 
 
